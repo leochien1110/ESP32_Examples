@@ -31,6 +31,7 @@ void loop() {
       buttonPressed = false;
       unsigned long pressDuration = millis() - buttonPressTime;
       if (pressDuration >= 1000) {  // Long press: reset to 1Hz
+        Serial.println("Reset Triggered!");
         freqIndex = 0;
       } else {  // Short press: cycle next
         freqIndex = (freqIndex + 1) % 5;
